@@ -29,10 +29,3 @@ class FilosofiaMVC:
         tyu="\n".join(troceado)
         print(tyu)
         return tyu
-
-def main():
-    h=FilosofiaMVC()
-    h.vista()
-
-if __name__=="__main__":
-    main()
