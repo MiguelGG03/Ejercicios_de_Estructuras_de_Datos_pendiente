@@ -7,10 +7,10 @@ class Bloque:
 
 
 class Si: 
-    def __init__(self, condicion, entonces, si_no): 
+    def __init__(self, condicion, entonces, sino): 
         self.condicion = condicion 
         self.entonces = entonces 
-        self.si_no = si_no
+        self.sino = sino
 
 
 class MientrasQue:  
