@@ -3,8 +3,6 @@ from clases.Ejercicio2.ejercicio_2 import *
 from clases.Ejercicio3.ejercicio_3 import *
 
 
-
-
 def main():
     acabar=False
     while(acabar==False):
