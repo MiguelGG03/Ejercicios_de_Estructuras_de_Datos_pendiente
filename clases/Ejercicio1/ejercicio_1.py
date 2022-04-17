@@ -76,8 +76,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-
-
-
-    #itertools.repeat(val,num)
