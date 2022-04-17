@@ -13,7 +13,7 @@ class Bloque:
                 nivel=self.instrucciones[i].pintarMostrar(nivel)
             if(isinstance(self.instrucciones[i],MientrasQue)):
                 nivel=self.instrucciones[i].pintarMientras(nivel)
-
+        return nivel
 
 class Si: 
     def __init__(self, condicion, entonces, sino): 
@@ -45,8 +45,8 @@ class MientrasQue:
     def pintarMientras(self,nivel):
         tab="    "*nivel
         print("{}while({}):".format(tab,self.condicion))
-        self.bloque.pintarInstruccion(nivel+1)
-        return (nivel+1)
+        nivel=self.bloque.pintarInstruccion(nivel+1)
+        return (nivel-1)
 
 
  
