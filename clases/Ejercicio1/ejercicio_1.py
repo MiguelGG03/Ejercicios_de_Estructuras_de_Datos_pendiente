@@ -4,10 +4,17 @@ class Bloque:
  
     def agregarInstruccion(self, instruccion): 
         self.instrucciones.append(instruccion)
+    
+    def 
 
-    def leerInstruccion(self,que_instruccion):
-        if(isinstance(self.instrucciones[que_instruccion],Si)):
-            return self.instrucciones[que_instruccion].pintarIf()
+    def pintarInstruccion(self):
+        for i in range(0,len(self.instrucciones)):
+            if(isinstance(self.instrucciones[i],Si)):
+                self.instrucciones[i].pintarIf()
+            if(isinstance(self.instrucciones[i],Mostrar)):
+                self.instrucciones[i].pintarMostrar()
+            if(isinstance(self.instrucciones[i],MientrasQue)):
+                self.instrucciones[i].pintarMientras()
 
 
 class Si: 
@@ -34,6 +41,11 @@ class MientrasQue:
         self.condicion = condicion 
         self.bloque = bloque
 
+    def pintarMientras(self):
+        print("while({}):".format(self.condicion))
+        self.bloque.pintarInstruccion()
+
+
  
 class Mostrar: 
     def __init__(self, mensaje): 
@@ -46,15 +58,21 @@ class Mostrar:
 
 
 def main():
+    nicel=0
     mostrar_ok = Mostrar('"OK"') 
     mostrar_ko = Mostrar('"KO"') 
     alternativa = Si("2 + 2 == 4", mostrar_ok, mostrar_ko) 
     bloque_alternativa = Bloque() 
     bloque_alternativa.agregarInstruccion(alternativa) 
     bucle = MientrasQue(True, bloque_alternativa) 
-    print(bloque_alternativa.leerInstruccion(0))
+    bucle.pintarMientras()
 
 
 
 if __name__=="__main__":
     main()
+
+
+
+
+    #itertools.repeat(val,num)
