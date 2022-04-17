@@ -36,8 +36,8 @@ class Mostrar:
     def __init__(self, mensaje): 
         self.mensaje = mensaje
 
-    def pintarMostrar(self,mostrar):
-        
+    def pintarMostrar(self):
+        print(self.mensaje)
 
 
 
