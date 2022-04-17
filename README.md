@@ -106,3 +106,9 @@ Código del ejercicio 2:
         print(tyu)
         return tyu
  ```
+
+
+### Ejercicio 3
+
+    EL JERERCICIO 3 LO SE HACER PERO
+    NO COMO ME LO PIDES
