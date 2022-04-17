@@ -6,7 +6,8 @@ class Bloque:
         self.instrucciones.append(instruccion)
 
     def leerInstruccion(self,que_instruccion):
-        return self.instrucciones[que_instruccion]
+        if(isinstance(self.instrucciones[que_instruccion],Si)):
+            return self.instrucciones[que_instruccion].pintarIf()
 
 
 class Si: 
@@ -14,6 +15,9 @@ class Si:
         self.condicion = condicion 
         self.entonces = entonces 
         self.sino = sino
+    
+    def pintarIf(self):
+        print( "if ("+self.condicion+"):")
 
 
 class MientrasQue:  
@@ -38,6 +42,7 @@ def main():
     bloque_alternativa.agregarInstruccion(alternativa) 
     bucle = MientrasQue(True, bloque_alternativa) 
     print(bloque_alternativa.leerInstruccion(0))
+
 
 
 if __name__=="__main__":
