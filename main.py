@@ -27,7 +27,7 @@ def main():
 
             elif(cual=='3'):
                 print('EJERCICIO 3:\n')
-                ejercicio6()
+                print()
             else:
                 print('Eso no es un 1, un 2 o un 3.')
         if(seguir=='n' or seguir=='N'):

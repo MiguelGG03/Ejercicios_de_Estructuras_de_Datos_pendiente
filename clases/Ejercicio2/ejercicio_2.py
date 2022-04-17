@@ -11,7 +11,6 @@ class FilosofiaMVC:
         f=open('salida.txt', 'w')
         f.write(troceado)
         f.close
-        self.f=f
 
 
 
