@@ -26,12 +26,12 @@ class Si:
         tab2="    "*(nivel+1)
         print( "{}if ({}):".format(tab,self.condicion))
         if(isinstance(self.entonces,Mostrar)):
-            self.entonces.pintarMostrar(nivel)
+            self.entonces.pintarMostrar(nivel+1)
         else:
             print("{}{}".format(tab2,self.entonces))
         print( "{}else:".format(tab))
         if(isinstance(self.sino,Mostrar)):
-            self.sino.pintarMostrar(nivel)
+            self.sino.pintarMostrar(nivel+1)
         else:
             print("{}{}".format(tab2,self.sino))
 
