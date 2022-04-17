@@ -18,6 +18,12 @@ class Si:
     
     def pintarIf(self):
         print( "if ("+self.condicion+"):")
+        if(isinstance(self.entonces,Mostrar)):
+            pintarMostrar()
+        else:
+            print("    {}".format(self.entonces))
+        print( "else:")
+        print("    {}".format(self.sino))
 
 
 class MientrasQue:  
@@ -30,6 +36,8 @@ class Mostrar:
     def __init__(self, mensaje): 
         self.mensaje = mensaje
 
+    def pintarMostrar(self,mostrar):
+        
 
 
 
