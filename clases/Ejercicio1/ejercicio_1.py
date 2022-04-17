@@ -21,12 +21,12 @@ class Si:
         if(isinstance(self.entonces,Mostrar)):
             self.entonces.pintarMostrar()
         else:
-            print("    {}".format(self.entonces))
+            print("{}".format(self.entonces))
         print( "else:")
         if(isinstance(self.sino,Mostrar)):
             self.sino.pintarMostrar()
         else:
-            print("    {}".format(self.sino))
+            print("{}".format(self.sino))
 
 
 class MientrasQue:  
@@ -40,7 +40,7 @@ class Mostrar:
         self.mensaje = mensaje
 
     def pintarMostrar(self):
-        print(self.mensaje)
+        print("print({})".format(self.mensaje))
 
 
 
