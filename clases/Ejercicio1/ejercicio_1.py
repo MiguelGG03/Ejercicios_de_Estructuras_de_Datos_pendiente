@@ -34,6 +34,7 @@ class Si:
             self.sino.pintarMostrar(nivel+1)
         else:
             print("{}{}".format(tab2,self.sino))
+        return nivel
 
 
 class MientrasQue:  
@@ -45,6 +46,7 @@ class MientrasQue:
         tab="    "*nivel
         print("{}while({}):".format(tab,self.condicion))
         self.bloque.pintarInstruccion(nivel)
+        return (nivel+1)
 
 
  
@@ -55,6 +57,7 @@ class Mostrar:
     def pintarMostrar(self,nivel):
         tab="    "*nivel
         print("{}print({})".format(tab,self.mensaje))
+        return nivel
 
 
 
