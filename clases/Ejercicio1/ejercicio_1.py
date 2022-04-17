@@ -4,17 +4,15 @@ class Bloque:
  
     def agregarInstruccion(self, instruccion): 
         self.instrucciones.append(instruccion)
-    
-    def 
 
-    def pintarInstruccion(self):
+    def pintarInstruccion(self,nivel):
         for i in range(0,len(self.instrucciones)):
             if(isinstance(self.instrucciones[i],Si)):
-                self.instrucciones[i].pintarIf()
+                self.instrucciones[i].pintarIf(nivel)
             if(isinstance(self.instrucciones[i],Mostrar)):
-                self.instrucciones[i].pintarMostrar()
+                self.instrucciones[i].pintarMostrar(nivel)
             if(isinstance(self.instrucciones[i],MientrasQue)):
-                self.instrucciones[i].pintarMientras()
+                self.instrucciones[i].pintarMientras(nivel)
 
 
 class Si: 
@@ -23,17 +21,19 @@ class Si:
         self.entonces = entonces 
         self.sino = sino
     
-    def pintarIf(self):
-        print( "if ("+self.condicion+"):")
+    def pintarIf(self,nivel):
+        tab="    "*nivel
+        tab2="    "*(nivel+1)
+        print( "{}if ({}):".format(tab,self.condicion))
         if(isinstance(self.entonces,Mostrar)):
-            self.entonces.pintarMostrar()
+            self.entonces.pintarMostrar(nivel)
         else:
-            print("{}".format(self.entonces))
-        print( "else:")
+            print("{}{}".format(tab2,self.entonces))
+        print( "{}else:".format(tab))
         if(isinstance(self.sino,Mostrar)):
-            self.sino.pintarMostrar()
+            self.sino.pintarMostrar(nivel)
         else:
-            print("{}".format(self.sino))
+            print("{}{}".format(tab2,self.sino))
 
 
 class MientrasQue:  
@@ -41,9 +41,10 @@ class MientrasQue:
         self.condicion = condicion 
         self.bloque = bloque
 
-    def pintarMientras(self):
-        print("while({}):".format(self.condicion))
-        self.bloque.pintarInstruccion()
+    def pintarMientras(self,nivel):
+        tab="    "*nivel
+        print("{}while({}):".format(tab,self.condicion))
+        self.bloque.pintarInstruccion(nivel)
 
 
  
@@ -51,21 +52,22 @@ class Mostrar:
     def __init__(self, mensaje): 
         self.mensaje = mensaje
 
-    def pintarMostrar(self):
-        print("print({})".format(self.mensaje))
+    def pintarMostrar(self,nivel):
+        tab="    "*nivel
+        print("{}print({})".format(tab,self.mensaje))
 
 
 
 
 def main():
-    nicel=0
+    nivel=0
     mostrar_ok = Mostrar('"OK"') 
     mostrar_ko = Mostrar('"KO"') 
     alternativa = Si("2 + 2 == 4", mostrar_ok, mostrar_ko) 
     bloque_alternativa = Bloque() 
     bloque_alternativa.agregarInstruccion(alternativa) 
     bucle = MientrasQue(True, bloque_alternativa) 
-    bucle.pintarMientras()
+    bucle.pintarMientras(nivel)
 
 
 
