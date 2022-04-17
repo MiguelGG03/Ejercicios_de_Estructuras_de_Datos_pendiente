@@ -1,4 +1,4 @@
-class sintaxis:
+class Bloque:
     def __init__(self): 
         self.instrucciones = []
  
